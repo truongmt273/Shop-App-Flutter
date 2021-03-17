@@ -19,9 +19,9 @@ class ProductDetailScreen extends StatelessWidget {
       listen: false,
     ).findById(productId);
     return Scaffold(
-      // appBar: AppBar(
-      //   title: Text(loadedProduct.title),
-      // ),
+      appBar: AppBar(
+        title: Text(loadedProduct.title),
+      ),
       body: CustomScrollView(
         slivers: <Widget>[
           SliverAppBar(
@@ -33,7 +33,8 @@ class ProductDetailScreen extends StatelessWidget {
                 tag: loadedProduct.id,
                 child: Image.network(
                   loadedProduct.imageUrl,
-                  fit: BoxFit.cover,
+                  height: MediaQuery.of(context).size.height * 0.4,
+                  fit: BoxFit.fill,
                 ),
               ),
             ),
